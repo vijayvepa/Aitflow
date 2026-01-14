@@ -1,0 +1,42 @@
+airflow:
+  expose_port: "false"
+api-server:
+  port: "38080"
+auto_select: "false"
+cloud:
+  api:
+    port: "443"
+    protocol: https
+    ws_protocol: wss
+disable_astro_run: "false"
+duplicate_volumes: "true"
+houston:
+  dial_timeout: "10"
+  skip_verify_tls: "false"
+interactive: "false"
+local:
+  core: http://localhost:38888
+  platform: cloud
+  registry: localhost:5555
+machine:
+  cpu: "2"
+  memory: "4096"
+page_size: "20"
+postgres:
+  host: host.docker.internal
+  password: postgres
+  port: "5432"
+  repository: docker.io/postgres
+  tag: "12.6"
+  user: postgres
+remote:
+  base_image_registry: images.astronomer.cloud
+ruff:
+  image: ghcr.io/astral-sh/ruff:latest
+sha_as_tag: "false"
+show_warnings: "true"
+skip_parse: "false"
+upgrade_message: "true"
+verbosity: warning
+webserver:
+  port: "8080"
