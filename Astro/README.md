@@ -34,3 +34,23 @@ webserver:
 asttro dev start
 ```
 
+## Add Dag
+- Setup dependencies
+```shell
+python3 -m venv .venv
+source .venv/Scripts/activate
+pip3 install airflow
+pip3 install airflow-operators
+
+```
+
+## Check Dag
+
+- Some old Airflow concepts are completely removed and dags are not detected if they are used
+- Fix by running
+```shell
+ astro dev upgrade-test
+
+```
+
+- I had to change `schedule_interval` to `schedule` for dag to be discovered
