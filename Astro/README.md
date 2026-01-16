@@ -126,3 +126,13 @@ host: https://api.nasa.gov
 
 - Verify data in DBeaver
 ![img_4.png](img_4.png)
+
+## Deploy to Astro Cloud
+
+```shell
+astro login
+astro deploy
+```
+
+- [Astro IO](https://cloud.astronomer.io/cmke2khdw4jvy01psuooju4lc/deployments)
+![img_5.png](img_5.png)
