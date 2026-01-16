@@ -61,6 +61,28 @@ pip3 install airflow-operators
 pip3 install apache-airflow[postgres]
 ```
 
+- Run docker-compose to 
+
+```shell
+cd Astro
+docker compose up -d
+```
+
+![img_1.png](img_1.png)
+
+- Setup connection
+
+```yaml
+host: host.docker.internal
+login: postgres
+password: postgres
+database: postgres
+port: 5440
+```
+
+![img_2.png](img_2.png)
+
+
 ## NASA Api
 
 - https://api.nasa.gov
@@ -80,3 +102,27 @@ export NASA_API_KEY='your_nasa_api_key_from_email'
 FROM astrocrpublic.azurecr.io/runtime:3.1-10
 RUN pip install apache-airflow-providers-http
 ```
+
+- Update connections
+
+![img.png](img.png)
+
+```yaml
+name: nasa_api
+host: https://api.nasa.gov
+```
+
+- Extra Fields Json
+
+```json
+{
+  "api_key": "***"
+}
+```
+
+## Run the DAG
+
+![img_3.png](img_3.png)
+
+- Verify data in DBeaver
+![img_4.png](img_4.png)

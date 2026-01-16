@@ -22,7 +22,7 @@ with DAG(
         postgres_hook = PostgresHook(postgres_conn_id="my_postgres_connection")
         create_table_query = """
             CREATE TABLE IF NOT EXISTS apod_data(
-                id SERIAL PRIMARY_KEY,
+                id SERIAL PRIMARY KEY,
                 title VARCHAR(255),
                 explanation TEXT, 
                 url TEXT,
