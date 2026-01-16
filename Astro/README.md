@@ -54,3 +54,29 @@ pip3 install airflow-operators
 ```
 
 - I had to change `schedule_interval` to `schedule` for dag to be discovered
+
+## Postgres
+
+```shell
+pip3 install apache-airflow[postgres]
+```
+
+## NASA Api
+
+- https://api.nasa.gov
+- Setup
+
+```shell
+export NASA_API_KEY='your_nasa_api_key_from_email'
+```
+
+```shell
+ curl https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}
+```
+
+- Update Dockerfile
+
+```dockerfile
+FROM astrocrpublic.azurecr.io/runtime:3.1-10
+RUN pip install apache-airflow-providers-http
+```
